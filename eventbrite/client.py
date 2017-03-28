@@ -209,6 +209,10 @@ class Eventbrite(AccessMethodsMixin):
 
         return self.post("/events/", data=data)
 
+    def post_venue(self, data):
+
+        return self.post("/venues/", data=data)
+
     def publish_event(self, event_id):
 
         return self.post("/events/%s/publish/" % event_id)
