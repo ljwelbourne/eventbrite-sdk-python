@@ -130,20 +130,6 @@ class Eventbrite(AccessMethodsMixin):
             data['changed_since'] = changed_since
         return self.get(url, data=data)
 
-    def get_user_events(self, user_id=None, data={}):
-        """
-        GET /users/:id/events/
-
-        :param int user_id: (optional) The id assigned to a user. Leave empty
-            to get current user.
-        """
-        if user_id:
-            url = '/users/{0}/events/'.format(user_id)
-        else:
-            url = '/users/me/events/'
-
-        return self.get(url, data=data)
-
     def delete_event(self, id, **data):
         """
         DELETE /events/:id/
